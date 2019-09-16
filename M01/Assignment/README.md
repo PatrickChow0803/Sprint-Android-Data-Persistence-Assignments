@@ -34,8 +34,7 @@ For this project, we'll be using a top-down coding process. The advantage of doi
 	
 4. Write getters for each of the data members  
 
-5. Write a `toCsvString` method to convert the object to a CSV string  
-> Make sure your CSV constructor and CSV output methods match formatting  
+5. Write a `toCsvString` method and CSV output methods match formatting  
 
 #### MainActivity  
 1. Build your `MainActivity` layout file with a `ScrollView` and a `Button`  

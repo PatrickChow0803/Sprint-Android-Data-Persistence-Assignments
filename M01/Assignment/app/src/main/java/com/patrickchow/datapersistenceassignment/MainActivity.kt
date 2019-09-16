@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Loop through bookData
         for(bookIndex in bookData){
             //Using bookData, input the list with all the book data
             listOfBooks.add(bookIndex)
