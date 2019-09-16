@@ -2,7 +2,9 @@
 
 ## Introduction
 
-Reading List is an application that lets you save a list of books and allow you to mark whether you have or have not read them. Since this application will use persistence, the books you create and check as read or not will be saved between launches of the application.
+Reading List is an application that lets you save a list of books and allow you to mark whether you have or have not read them.
+ Since this application will use persistence, the books you create and check as read or not will be saved between launches 
+ of the application.
 
 Please look at the screen recording below to know what the finished project could look like:
 
@@ -15,7 +17,8 @@ Please look at the screen recording below to know what the finished project coul
 
 ### Part 1 - Front End
 
-For this project, we'll be using a top-down coding process. The advantage of doing this is that we can have an app that a user can interact with and then you can add functionality behind it.  
+For this project, we'll be using a top-down coding process. The advantage of doing this is that we can have an app that a user
+ can interact with and then you can add functionality behind it.  
 
 #### Book  
 1. Create a "Book.java" file. Create a class called `Book`  
@@ -24,10 +27,13 @@ For this project, we'll be using a top-down coding process. The advantage of doi
     - A `reasonToRead` String  
     - A `hasBeenRead` boolean  
     - An `id` String  
+	
 3. Create two constructors.  
     a. One that accepts and assigns all data members  
     b. One that parses a CSV string to an object  
+	
 4. Write getters for each of the data members  
+
 5. Write a `toCsvString` method to convert the object to a CSV string  
 > Make sure your CSV constructor and CSV output methods match formatting  
 
@@ -38,7 +44,9 @@ For this project, we'll be using a top-down coding process. The advantage of doi
 2. Write a `buildItemView` method which will accept a `Book` object and return a custom view to display information about the book.  
 > Typically these views will just show the title of the book. In the next couple weeks, we'll show you how to define custom layouts for lists  
 
-3. Hardcode a list of `Book` objects to test your methods. Be sure to add all views returned from your `buildItemView` method to the `ScrollView`'s child using `.addView(View)`  
+3. Hardcode a list of `Book` objects to test your methods. Be sure to add all views returned from your
+ `buildItemView` method to the `ScrollView`'s child using `.addView(View)`  
+ 
 4. Test your app.  
 
 #### EditBookActivity  
