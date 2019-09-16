@@ -6,5 +6,5 @@ class Book(
     var hasBeenRead: Boolean,
     var id: String
 ){
-    
+
 }
