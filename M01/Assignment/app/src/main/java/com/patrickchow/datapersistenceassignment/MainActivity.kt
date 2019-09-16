@@ -1,5 +1,6 @@
 package com.patrickchow.datapersistenceassignment
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -23,7 +24,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_add.setOnClickListener {
-            ll_books.addView(createTextView())
+            val editBookIntent = Intent(this, EditBookActivity::class.java)
+            startActivity(editBookIntent)
         }
     }
 

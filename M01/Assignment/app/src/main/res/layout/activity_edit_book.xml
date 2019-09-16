@@ -8,16 +8,16 @@
     android:orientation="vertical"
     tools:context=".EditBookActivity">
 
-    <TextView
+    <EditText
         android:id="@+id/tv_title"
-        android:text="Book Title"
+        android:hint="Book Title"
         android:textSize="60sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <TextView
+    <EditText
         android:id="@+id/tv_reason"
-        android:text="Reason"
+        android:hint="Reason"
         android:textSize="60sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
