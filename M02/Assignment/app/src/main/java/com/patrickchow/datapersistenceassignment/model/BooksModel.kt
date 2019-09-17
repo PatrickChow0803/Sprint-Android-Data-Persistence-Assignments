@@ -9,15 +9,15 @@ class BooksModel {
     companion object{
 
         fun updateBookList() {
-            val idList = SharedPrefsDao.getAllBookIds()
+            val idList = MainActivity.sharedPrefsDao.getAllBookIds()
             val oldIdList = idList.split(",")
             val listOfIds = ArrayList<String>(oldIdList.size)
             if (idList.isNotBlank()) {
                 listOfIds.addAll(oldIdList)
             }
             listOfIds.forEach {
-                val csvString = SharedPrefsDao.getBookCSV(it)
-                SharedPrefsDao.updateBook(Book(csvString))
+                val csvString = MainActivity.sharedPrefsDao.getBookCSV(it)
+                MainActivity.sharedPrefsDao.updateBook(Book(csvString))
             }
         }
 
@@ -27,8 +27,8 @@ class BooksModel {
                 val book = Book(bookCSV)
                 val index = book.id
                 MainActivity.bookList[index!!.toInt()] = book
-                SharedPrefsDao.saveAllBookCvs()
-                SharedPrefsDao.saveAllIds()
+                MainActivity.sharedPrefsDao.saveAllBookCvs()
+                MainActivity.sharedPrefsDao.saveAllIds()
             }
         }
     }

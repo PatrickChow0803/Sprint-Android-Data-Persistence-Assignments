@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
             const val USER_PREFERENCE = "user_preferences"
             const val ID_KEY = "id-key"
             const val STRING_KEY = "string-key"
+            val sharedPrefsDao = SharedPrefsDao()
 
             var bookList = mutableListOf<Book>()
 
@@ -30,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         lateinit var adapter: BooksAdapter
+
+
 
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
@@ -39,8 +42,8 @@ class MainActivity : AppCompatActivity() {
                 USER_PREFERENCE, Context.MODE_PRIVATE)
 
             BooksModel.updateBookList()
-            SharedPrefsDao.saveAllBookCvs()
-            SharedPrefsDao.saveAllIds()
+            sharedPrefsDao.saveAllBookCvs()
+            sharedPrefsDao.saveAllIds()
 
             recycler_view.setHasFixedSize(true)
             val manager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
@@ -64,19 +67,17 @@ class MainActivity : AppCompatActivity() {
                     bookList.add(book)
                     adapter.notifyDataSetChanged()
 
-                    SharedPrefsDao.saveAllBookCvs()
-                    SharedPrefsDao.saveAllIds()
+                    sharedPrefsDao.saveAllBookCvs()
+                    sharedPrefsDao.saveAllIds()
                 }
                 else
-                    Toast.makeText(this, "Failure on onActivityResult", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Failure on onActivityResult 1", Toast.LENGTH_SHORT).show()
             }
             if (requestCode == EDIT_BOOK && resultCode == Activity.RESULT_OK) {
                 BooksModel.handleEditActivityResult(data!!)
                 adapter.notifyDataSetChanged()
 
             }
-            else
-                Toast.makeText(this, "Failure on onActivityResult", Toast.LENGTH_SHORT).show()
         }
 }
 

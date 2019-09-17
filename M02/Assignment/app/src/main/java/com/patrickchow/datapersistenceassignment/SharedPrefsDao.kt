@@ -2,9 +2,9 @@ package com.patrickchow.datapersistenceassignment
 
 import com.patrickchow.datapersistenceassignment.model.Book
 
-object SharedPrefsDao {
+class SharedPrefsDao {
 
-    const val ID_LIST = "id-list"
+    val ID_LIST = "id-list"
 
     fun saveAllIds() {
         var ids = ""

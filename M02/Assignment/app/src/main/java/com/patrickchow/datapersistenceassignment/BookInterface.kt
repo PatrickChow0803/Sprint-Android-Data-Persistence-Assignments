@@ -7,5 +7,6 @@ interface BookInterface{
     fun saveAllIds()
     fun getBookCSV(id: String): String
     fun updateBook(book: Book)
-
+    fun saveAllBookCvs()
+    fun getAllBookIds(): String
 }
