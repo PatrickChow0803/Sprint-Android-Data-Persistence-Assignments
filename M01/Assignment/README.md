@@ -72,7 +72,8 @@ A. New Entry
 ​    2. In the `onCreate` method of the `EditBookActivity` use `getIntent().getStringExtra()` to get the passed id  
 B. Edit Entry  
 ​    1. In your `buildItemView`, give the created item an `onClickListener`  
-​    2. This `onClickListener` must create an `Intent` just like the button, but this one will add the `Book` as a CSV string to the `Intent`  
+​    2. This `onClickListener` must create an `Intent` just like the button, but this one will add the `Book` 
+	   as a CSV string to the `Intent`  
 C. Accept Data  
 ​    Now that we have data in the `Intent`, we need to get it from the `Intent`  
 ​    1. In the `onCreate` method of your `EditBookActivity` use `getIntent()` to get a handle on the `Intent`  

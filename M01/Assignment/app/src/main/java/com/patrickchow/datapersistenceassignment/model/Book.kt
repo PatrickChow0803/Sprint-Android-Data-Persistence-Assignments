@@ -4,7 +4,7 @@ class Book{
 
     var title: String ?= null
     var reasonToRead: String ?= null
-    var hasBeenRead: Boolean ?= null
+    var hasBeenRead: Boolean = false
     var id: String ?= null
 
     constructor(title:String, reasonToRead: String, hasBeenRead: Boolean, id:String){

@@ -1,53 +1,82 @@
 package com.patrickchow.datapersistenceassignment
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.patrickchow.datapersistenceassignment.adapter.BooksAdapter
 import com.patrickchow.datapersistenceassignment.model.Book
+import com.patrickchow.datapersistenceassignment.model.BooksModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    val listOfBooks = mutableListOf<Book>()
+        companion object {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+            const val ADD_BOOK = 1
+            const val EDIT_BOOK = 2
+            const val USER_PREFERENCE = "user_preferences"
+            const val ID_KEY = "id-key"
+            const val STRING_KEY = "string-key"
 
-        //Loop through bookData
-        for(bookIndex in bookData){
-            //Using bookData, input the list with all the book data
-            listOfBooks.add(bookIndex)
-            //Add the books into the linear layout
-            ll_books.addView(buildItemView(bookIndex))
+            var bookList = mutableListOf<Book>()
+
+            lateinit var preferences: SharedPreferences
         }
 
-        btn_add.setOnClickListener {
-            val editBookIntent = Intent(this, EditBookActivity::class.java)
-            startActivity(editBookIntent)
+        lateinit var adapter: BooksAdapter
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
+
+            preferences = this.getSharedPreferences(
+                USER_PREFERENCE, Context.MODE_PRIVATE)
+
+            BooksModel.updateBookList()
+            SharedPrefsDao.saveAllBookCvs()
+            SharedPrefsDao.saveAllIds()
+
+            recycler_view.setHasFixedSize(true)
+            val manager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+            adapter = BooksAdapter(bookList)
+            recycler_view.layoutManager = manager
+            recycler_view.adapter = adapter
+
+            btn_add.setOnClickListener {
+                val intent = Intent(this, EditBookActivity::class.java)
+                intent.putExtra(ID_KEY, bookList.size.toString())
+                startActivityForResult(intent, ADD_BOOK)
+            }
         }
-    }
 
-    fun createTextView(): TextView{
-        val text = TextView(this)
-        text.text = "HELLO"
-        return text
-    }
+        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            super.onActivityResult(requestCode, resultCode, data)
+            if (requestCode == ADD_BOOK && resultCode == Activity.RESULT_OK) {
+                val bookCSV = data?.getStringExtra(STRING_KEY)
+                if (bookCSV != null) {
+                    val book = Book(bookCSV)
+                    bookList.add(book)
+                    adapter.notifyDataSetChanged()
 
-    //Creates the view to display information about the book
-    fun buildItemView(book: Book): TextView {
-        val view = TextView(this)
-        view.text = book.title
-        view.textSize = 30f
-        return view
-    }
+                    SharedPrefsDao.saveAllBookCvs()
+                    SharedPrefsDao.saveAllIds()
+                }
+                else
+                    Toast.makeText(this, "Failure on onActivityResult", Toast.LENGTH_SHORT).show()
+            }
+            if (requestCode == EDIT_BOOK && resultCode == Activity.RESULT_OK) {
+                BooksModel.handleEditActivityResult(data!!)
+                adapter.notifyDataSetChanged()
 
-    val bookData = mutableListOf<Book> (
-        Book("Book1", "Reason1", false, "1"),
-        Book("Book2", "Reason2", true, "2"),
-        Book("Book3", "Reason3", false, "3"),
-        Book("Book4", "Reason4", false, "4")
-    )
-
+            }
+            else
+                Toast.makeText(this, "Failure on onActivityResult", Toast.LENGTH_SHORT).show()
+        }
 }
+
