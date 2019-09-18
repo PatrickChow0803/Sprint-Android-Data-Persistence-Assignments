@@ -53,11 +53,13 @@ Build a schema for a db using 2 tables
 
 1. Move your insert queries to the left panel.
 
-   > Remember, the left panel is run with the update button to build your DB. It will reset the database and the run button will run queries and 
+   > Remember, the left panel is run with the update button to build your DB.
+   It will reset the database and the run button will run queries and 
 
 2. Click update to reset and update your DB
 
-3. In the right panel, select all the data from one of your tables by using the query SELECT * FROM _table_name_
+3. In the right panel, select all the data from one of your tables by using the query 
+SELECT * FROM _table_name_
 
 4. Click Run to make sure your queries work
 

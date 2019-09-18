@@ -10,3 +10,12 @@ CREATE TABLE Teams(
   wins INTEGER,
   losses INTEGER
  );
+ 
+INSERT INTO PLAYERS(first_name, last_name, age, id) 
+VALUES ("Patrick","Chow", 22, 1);
+
+INSERT INTO PLAYERS(first_name, last_name, age, id) 
+VALUES ("Kevin","Shaw", 32, 2);
+
+INSERT INTO PLAYERS(first_name, last_name, age, id) 
+VALUES ("Bryan","Law", 12, 4);
