@@ -43,7 +43,9 @@ Build a schema for a db using 2 tables
 1. In the panel on the right, write queries to insert data into your table.
    1. Write the structure of the query, INSERT INTO players () VALUES ()
    2. Add the column names into the insert parameters, be sure to separate them by commas
-   3. Add the column values into the values parameters, be sure to separate them and that they are in the same order as the column names
+   3. Add the column values into the values parameters, be sure to separate 
+   them and that they are in the same order as the column names
+   
 2. Click Run to make sure your queries work
 3. Repeat step 1 multiple times for each table to add test data
 
