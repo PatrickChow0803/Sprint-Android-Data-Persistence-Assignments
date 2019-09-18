@@ -1,0 +1,12 @@
+CREATE TABLE Players(
+  first_name TEXT,
+  last_name TEXT, 
+  age INTEGER,
+  id INTEGER PRIMARY KEY
+);
+
+CREATE TABLE Teams(
+  name TEXT,
+  wins INTEGER,
+  losses INTEGER
+ );
