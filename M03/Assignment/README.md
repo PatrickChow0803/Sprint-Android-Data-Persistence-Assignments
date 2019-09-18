@@ -2,7 +2,11 @@
 
 ## Introduction
 
-This project will have you use db-fiddle to create a small SQL database and interact with it. To turn this assignment in, I'd like you to do 2 things. First, fork this repo and add two text files to it using the "create new file" button. One file will be the code in the left panel of db-fiddle, the other will be the code on the right. The second thing would be to send the URL to the latest version of your db-fiddle to your TL in a DM on Slack so they can review it.
+This project will have you use db-fiddle to create a small SQL database and interact with it.
+ To turn this assignment in, I'd like you to do 2 things. First, fork this repo and add two text 
+ files to it using the "create new file" button. One file will be the code in the left panel of db-fiddle,
+ the other will be the code on the right. The second thing would be to send the URL to the latest version
+ of your db-fiddle to your TL in a DM on Slack so they can review it.
 
 ## Instructions
 
@@ -23,7 +27,8 @@ Build a schema for a db using 2 tables
 
    1. Write the structure of the query by writing CREATE TABLE ();
    2. Inside of the parenthesis, add columns for each of your player stats
-   3. You must include columns for first name (TEXT), last name (TEXT), AGE (INTEGER), and id (PRIMARY KEY), you may include any other values you would like to
+   3. You must include columns for first name (TEXT), last name (TEXT), AGE (INTEGER),
+   and id (PRIMARY KEY), you may include any other values you would like to
 
 3. Click Update, then run to make sure your query works
 
