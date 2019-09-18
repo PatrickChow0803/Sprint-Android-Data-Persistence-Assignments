@@ -77,7 +77,9 @@ SELECT * FROM _table_name_
 
 ### Part 5 - Updating Data
 
-1. Write queries to update a value in each of your tables using a combination of UPDATE, SET, and WHERE clauses
+1. Write queries to update a value in each of your tables using a 
+combination of UPDATE, SET, and WHERE clauses
+
 2. Click Run to make sure your queries work
 
 ### Part 6 - Removing Data

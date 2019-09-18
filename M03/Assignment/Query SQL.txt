@@ -5,3 +5,11 @@ SELECT first_name FROM Players;
 SELECT * FROM Players WHERE id=1;
 
 SELECT * FROM Players WHERE id>1;
+
+UPDATE Players SET first_name = "Grace Liu" where first_name LIKE "%a%";
+
+SELECT * FROM Players;
+
+UPDATE Teams SET wins = 22 where wins = 3;
+
+SELECT * FROM Teams;
