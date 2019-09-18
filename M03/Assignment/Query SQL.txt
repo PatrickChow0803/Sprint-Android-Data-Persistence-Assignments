@@ -13,3 +13,7 @@ SELECT * FROM Players;
 UPDATE Teams SET wins = 22 where wins = 3;
 
 SELECT * FROM Teams;
+
+DELETE FROM Players where first_name = "Grace";
+
+SELECT * FROM Players;

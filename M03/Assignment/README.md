@@ -93,15 +93,20 @@ FROM, and WHERE clause.
 
 ### Joining Tables
 
-1. In the CREATE query for your players table, add a FOREIGN KEY column for the id of the team the player belongs to.
+1. In the CREATE query for your players table, add a FOREIGN KEY column
+ for the id of the team the player belongs to.
 
-> The syntax for adding a foreign key is the same as any other field, however, there must be a line at the end of the CREATE TABLE which binds the foreign key. The structure is `FOREIGN KEY (_foreign_key_name_in_current_table_) REFERENCES _foreign_table_(_key_name_in_foreign_table)`
+> The syntax for adding a foreign key is the same as any other field, however,
+ there must be a line at the end of the CREATE TABLE which binds the foreign key. 
+ The structure is `FOREIGN KEY (_foreign_key_name_in_current_table_) REFERENCES _foreign_table_
+ (_key_name_in_foreign_table)`
 
 2. Update all your insert queries for that table to include this FOREIGN KEY
 
    > You'll want to be sure to add all the teams first to make sure you have their ids to use
 
-3. Write queries to SELECT values from both columns, FROM your main table (the one that references the other), and JOIN the second table ON the foreign key with the other table's key
+3. Write queries to SELECT values from both columns, FROM your main table (the one that
+ references the other), and JOIN the second table ON the foreign key with the other table's key
 
    > You'll want to use the `table_name.` to distinguish between tables
 
