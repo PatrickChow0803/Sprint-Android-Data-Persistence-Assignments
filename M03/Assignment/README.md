@@ -84,7 +84,9 @@ combination of UPDATE, SET, and WHERE clauses
 
 ### Part 6 - Removing Data
 
-1. Write a query to delete an item from one of your tables using a query with a DELETE, FROM, and WHERE clause.
+1. Write a query to delete an item from one of your tables using a query with a DELETE, 
+FROM, and WHERE clause.
+
 2. Click Run to make sure your queries work
 
 ## Challenge
