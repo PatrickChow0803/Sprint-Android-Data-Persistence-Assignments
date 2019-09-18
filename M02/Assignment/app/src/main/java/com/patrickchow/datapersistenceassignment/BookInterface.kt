@@ -3,10 +3,9 @@ package com.patrickchow.datapersistenceassignment
 import com.patrickchow.datapersistenceassignment.model.Book
 
 interface BookInterface{
-
-    fun saveAllIds()
-    fun getBookCSV(id: String): String
-    fun updateBook(book: Book)
-    fun saveAllBookCvs()
-    fun getAllBookIds(): String
+    
+    fun createEntry(entry: Book)
+    fun updateEntry(entry: Book)
+    fun readAllEntries(): MutableList<Book>
+    fun deleteEntry(entry: Book)
 }
