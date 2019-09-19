@@ -1,18 +1,24 @@
 package com.example.readinglist
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import org.json.JSONException
 import org.json.JSONObject
+import java.io.Serializable
 
-class Book {
+@Entity //Entity defines that this will be the table
+class Book : Serializable {
 
     companion object {
-        const val INVALID_ID = -1
+        const val INVALID_ID = 0
     }
 
     var title: String? = null
     var reasonToRead: String? = null
     var hasBeenRead: Boolean = false
-    var id: Int = 20
+
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0
 
     constructor(title: String?, reasonToRead: String?, hasBeenRead: Boolean, id: Int) {
         this.title = title

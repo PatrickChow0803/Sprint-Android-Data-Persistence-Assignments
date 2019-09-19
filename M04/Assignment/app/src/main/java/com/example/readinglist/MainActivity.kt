@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
         button_add.setOnClickListener {
             val intent = Intent(this, EditBookActivity::class.java)
             val addId = ll_booklist.childCount
-            Log.i("Debug", addId.toString())
             intent.putExtra(ADD_INTENT_KEY, addId)
             startActivityForResult(intent, REQUEST_CODE)
         }
