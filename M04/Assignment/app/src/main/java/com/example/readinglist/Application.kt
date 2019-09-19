@@ -1,6 +1,7 @@
 package com.example.readinglist
 
 import android.app.Application
+import com.example.readinglist.database.BookDBRepo
 import timber.log.Timber
 
 val repo: BookRepoInterface by lazy {
@@ -29,7 +30,11 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        repo = BookFileRepo(applicationContext)
+        //repo = BookFileRepo(applicationContext)
+
+        //application instance is tied to the lifecycle of the application,
+        //while the Activity instance is tied to the lifecycle of an Activity
+        repo = BookDBRepo(applicationContext)
 
         // TODO: 2. Configure Timber logging
         // "Timber" Library
