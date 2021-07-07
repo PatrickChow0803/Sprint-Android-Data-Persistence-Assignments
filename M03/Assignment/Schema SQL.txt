@@ -1,0 +1,30 @@
+CREATE TABLE Players(
+  first_name TEXT,
+  last_name TEXT, 
+  age INTEGER,
+  id INTEGER PRIMARY KEY
+);
+
+CREATE TABLE Teams(
+  name TEXT,
+  wins INTEGER,
+  losses INTEGER
+ );
+ 
+INSERT INTO PLAYERS(first_name, last_name, age, id) 
+VALUES ("Patrick","Chow", 22, 1);
+
+INSERT INTO PLAYERS(first_name, last_name, age, id) 
+VALUES ("Kevin","Shaw", 32, 2);
+
+INSERT INTO PLAYERS(first_name, last_name, age, id) 
+VALUES ("Bryan","Law", 12, 3);
+
+INSERT INTO Teams(name, wins, losses)
+VALUES ("A Team", 3, 10);
+
+INSERT INTO Teams(name, wins, losses)
+VALUES ("B Team", 30, 20);
+
+
+
